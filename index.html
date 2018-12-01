@@ -1,0 +1,200 @@
+<head>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</head>
+<style>
+body {
+  font-family: Times New Roman;
+  margin: 0;
+  background-color: pink;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  vertical-align: middle;
+}
+.container {
+  position: relative;
+}
+.mySlides {
+  display: none;
+}
+.cursor {
+  cursor: pointer;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.numbertext {
+  color: #FFFFFF;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.caption-container {
+  text-align: center;
+  background-color: #000000;
+  padding: 2px 16px;
+  color: white;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.demo {
+  opacity: 0.6;
+}
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<body>
+<center>
+  <h1><b>hi it's me!</b></h1>
+  <h5><b>i didn't have the chance to share this on my homepage<br>but this is a page dedicated to all about me</b></h5>
+</center>
+<h2><center>
+  <i class="em em-fish_cake"></i>
+  <i class="em em-heartpulse"></i>
+  <i class="em em-hugging_face"></i>
+  <i class="em em-pig"></i>
+</center></h2>
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1/10</div>
+    <img src="am1.JPG" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">2/10</div>
+    <img src="am2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">3/10</div>
+    <img src="am3.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">4/10</div>
+    <img src="am4.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">5/10</div>
+    <img src="am5.JPG" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">6/10/div>
+    <img src="am6.jpg" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">7/10/div>
+    <img src="am7.JPG" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">8/10/div>
+    <img src="am8.JPG" style="width:100%">
+  </div>
+    <div class="mySlides">
+    <div class="numbertext">9/10/div>
+    <img src="am9.JPG" style="width:100%">
+  </div>
+  <div class="mySlides">
+    <div class="numbertext">10/10/div>
+    <img src="am10.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="am1.JPG" style="width:100%" onclick="currentSlide(1)" alt="baby sunny">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am2.jpg" style="width:100%" onclick="currentSlide(2)" alt="one of my favorite artists">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am3.jpg" style="width:100%" onclick="currentSlide(3)" alt="travis scott's biggest fan">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am4.jpg" style="width:100%" onclick="currentSlide(4)" alt="celebrity crush">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am5.JPG" style="width:100%" onclick="currentSlide(5)" alt="i want to marry him">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="am6.jpg" style="width:100%" onclick="currentSlide(6)" alt="what i live by: stay happy">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am7.JPG" style="width:100%" onclick="currentSlide(7)" alt="if i'm ever feeling down">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am8.JPG" style="width:100%" onclick="currentSlide(8)" alt="favorite show">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="am9.JPG" style="width:100%" onclick="currentSlide(9)" alt="my idols">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(10)" alt="why not">
+    </div>
+  </div>
+</div>
+</body>
