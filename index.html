@@ -1,32 +1,11 @@
 <head>
 <script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
 }
 </script>
 </head>
@@ -36,73 +15,47 @@ body {
   margin: 0;
   background-color: pink;
 }
+h1 {
+  padding-top: 10px;
+}
 * {
-  box-sizing: border-box;
-}
-img {
-  vertical-align: middle;
-}
-.container {
-  position: relative;
-}
-.mySlides {
-  display: none;
-}
-.cursor {
-  cursor: pointer;
-}
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.numbertext {
-  color: #FFFFFF;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-.caption-container {
-  text-align: center;
-  background-color: #000000;
-  padding: 2px 16px;
-  color: white;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+    box-sizing: border-box;
 }
 .column {
-  float: left;
-  width: 20%;
-  padding: 5px;
+    float: left;
+    width: 20%;
+    padding: 10px;
 }
-.demo {
-  opacity: 0.6;
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
 }
-.active,
-.demo:hover {
-  opacity: 1;
+.column img:hover {
+    opacity: 1;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.container {
+    position: relative;
+    display: none;
+}
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 50px;
+}
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    font-size: 35px;
+    cursor: pointer;
 }
 </style>
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -117,85 +70,42 @@ img {
   <i class="em em-hugging_face"></i>
   <i class="em em-pig"></i>
 </center></h2>
-<div class="container">
-  <div class="mySlides">
-    <div class="numbertext">1/10</div>
-    <img src="am1.JPG" style="width:100%">
+<div class="row">
+  <div class="column">
+    <img src="am1.JPG" alt="baby me" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">2/10</div>
-    <img src="am2.jpg" style="width:100%">
+  <div class="column">
+    <img src="am2.jpg" alt="one of my favorite artist's" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">3/10</div>
-    <img src="am3.jpg" style="width:100%">
+  <div class="column">
+    <img src="am3.jpg" alt="travis scott's biggest fan" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">4/10</div>
-    <img src="am4.jpg" style="width:100%">
+  <div class="column">
+    <img src="am4.jpg" alt="my celebtrity crush" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">5/10</div>
-    <img src="am5.JPG" style="width:100%">
+  <div class="column">
+    <img src="am5.JPG" alt="i want to marry him" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">6/10/div>
-    <img src="am6.jpg" style="width:100%">
+  <div class="column">
+    <img src="am6.jpg" alt="face i live by" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">7/10/div>
-    <img src="am7.JPG" style="width:100%">
+  <div class="column">
+    <img src="am7.JPG" alt="flic that keeps me happy" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">8/10/div>
-    <img src="am8.JPG" style="width:100%">
+  <div class="column">
+    <img src="am8.JPG" alt="my favorite tv show" style="width:100%" onclick="myFunction(this);">
   </div>
-    <div class="mySlides">
-    <div class="numbertext">9/10/div>
-    <img src="am9.JPG" style="width:100%">
+  <div class="column">
+    <img src="am9.JPG" alt="my idols" style="width:100%" onclick="myFunction(this);">
   </div>
-  <div class="mySlides">
-    <div class="numbertext">10/10/div>
-    <img src="am10.jpg" style="width:100%">
+    <div class="column">
+    <img src="am10.jpg" alt="why not" style="width:100%" onclick="myFunction(this);">
   </div>
-    
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
 
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="am1.JPG" style="width:100%" onclick="currentSlide(1)" alt="baby sunny">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am2.jpg" style="width:100%" onclick="currentSlide(2)" alt="one of my favorite artists">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am3.jpg" style="width:100%" onclick="currentSlide(3)" alt="travis scott's biggest fan">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am4.jpg" style="width:100%" onclick="currentSlide(4)" alt="celebrity crush">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am5.JPG" style="width:100%" onclick="currentSlide(5)" alt="i want to marry him">
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="am6.jpg" style="width:100%" onclick="currentSlide(6)" alt="what i live by: stay happy">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am7.JPG" style="width:100%" onclick="currentSlide(7)" alt="if i'm ever feeling down">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am8.JPG" style="width:100%" onclick="currentSlide(8)" alt="favorite show">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="am9.JPG" style="width:100%" onclick="currentSlide(9)" alt="my idols">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(10)" alt="why not">
-    </div>
-  </div>
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
 </div>
 </body>
